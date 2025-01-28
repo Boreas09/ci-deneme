@@ -27,7 +27,7 @@ jobs:
 
       - name: Exclude .github/workflows directory from changes
         run: |
-          git rm rf -r --cached .github/workflows
+          git rm -r .github/workflows
 
       - name: Push changes back to target repository
         env:
