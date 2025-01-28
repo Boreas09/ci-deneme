@@ -27,6 +27,6 @@ jobs:
 
       - name: Push changes back to target repository
         env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PAT_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
         run: |
           git push https://$PAT_TOKEN@github.com/Boreas09/ci-deneme.git main
