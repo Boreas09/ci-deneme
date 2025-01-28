@@ -26,5 +26,7 @@ jobs:
           git merge upstream/main --allow-unrelated-histories
 
       - name: Push changes back to target repository
+        env:
+          PAT_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
         run: |
-          git push origin main
+          git push https://Boreas09:${{ secrets.PAT_TOKEN }}@github.com/Boreas09/ci-deneme.git main
