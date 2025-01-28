@@ -6,8 +6,6 @@ on:
       - main
   workflow_dispatch:
 
-permissions: write-all
-
 jobs:
   pull_from_upstream:
     runs-on: ubuntu-latest
@@ -26,6 +24,10 @@ jobs:
           git remote add upstream https://github.com/Digine-Labs/rosettanet.git
           git fetch upstream
           git merge upstream/main --allow-unrelated-histories
+
+      - name: Exclude .github/workflows directory from changes
+        run: |
+          git rm -r --cached .github/workflows
 
       - name: Push changes back to target repository
         env:
