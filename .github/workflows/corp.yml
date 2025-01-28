@@ -76,14 +76,6 @@ jobs:
           cp -u $FILES_NEW ../
           cd ..
 
-      - name: Check for changes
-        if: env.exiting1 != 'true'
-        run: |
-          if git diff --quiet; then
-            echo "No changes detected. Exiting."
-            echo "exiting2=true" >> $GITHUB_ENV
-          fi
-
       - name: Commit
         if: env.exiting1 != 'true' && env.exiting2 != 'true'
         run: |
