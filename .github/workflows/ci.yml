@@ -29,4 +29,4 @@ jobs:
         env:
           PAT_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
         run: |
-          git push https://$PAT_TOKEN@github.com/Boreas09/ci-deneme.git main
+          git push https://Boreas09:$PAT_TOKEN@github.com/Boreas09/ci-deneme.git main
