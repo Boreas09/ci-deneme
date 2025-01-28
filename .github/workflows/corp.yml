@@ -4,7 +4,6 @@ env:
   AUTOMATIC_MONITOR: true
   FILES: "src,tests" # seperate multiple entries with ,
   FILES_NEW: "*" # seperate multiple entries with ,
-  EXTRA: mv LICENSE LICENSE_some_repo # do an extra command like renaming
   USERNAME: Boreas09
   ADDRESS_SUFFIX: users.noreply.github.com
   TOKEN_NAME: SECOND_REPO_TOKEN # name of token defined in the target repo's settings, needed for private repos
@@ -73,6 +72,7 @@ jobs:
         if: env.exiting1 != 'true'
         run: |
           cd $PATH_SOURCE_CHECKOUT
+          cp -u $FILES_NEW ../
           cd ..
 
       - name: Check for changes
