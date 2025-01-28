@@ -34,5 +34,4 @@ jobs:
           PAT_TOKEN: ${{ secrets.SECOND_REPO_TOKEN }}
         run: |
           git add .
-          git commit -m "Sync with RosettaNet, excluding workflows"
           git push https://Boreas09:${{ env.PAT_TOKEN }}@github.com/Boreas09/ci-deneme.git main
