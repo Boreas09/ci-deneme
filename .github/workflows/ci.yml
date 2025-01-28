@@ -1,0 +1,27 @@
+name: Sync with RosettaNet
+
+on:
+  push:
+    branches:
+      - main # Trigger on pushes to the main branch of the upstream repo
+  workflow_dispatch: # Manual trigger for debugging or immediate syncing
+
+jobs:
+  pull_from_upstream:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Git environment
+        run: |
+          git config --global user.name "boreas09"
+          git config --global user.email "bora_atik98@hotmail.com"
+
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+
+      - name: Add upstream and pull changes
+        run: |
+          git remote add upstream https://github.com/Digine-Labs/rosettanet.git
+          git fetch upstream
+          git merge upstream/main --allow-unrelated-histories
+          git push origin main
