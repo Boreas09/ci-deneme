@@ -1,0 +1,31 @@
+.formContainer {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-left: 2rem;
+}
+
+.formInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formInput {
+  width: 500px;
+  height: 30px;
+}
+
+.formButtonContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+.formButton {
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  max-width: 200px;
+}
