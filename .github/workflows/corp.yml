@@ -73,8 +73,6 @@ jobs:
         if: env.exiting1 != 'true'
         run: |
           cd $PATH_SOURCE_CHECKOUT
-          $EXTRA
-          cp -u $FILES_NEW ../
           cd ..
 
       - name: Check for changes
